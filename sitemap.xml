@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://saraththarayil.github.io/tags/blogging/</loc>
+    <lastmod>2021-04-09T01:39:36+05:30</lastmod>
+  </url><url>
+    <loc>https://saraththarayil.github.io/tags/hugo/</loc>
+    <lastmod>2021-04-09T01:39:36+05:30</lastmod>
+  </url><url>
+    <loc>https://saraththarayil.github.io/tags/lookup/</loc>
+    <lastmod>2021-04-09T01:39:36+05:30</lastmod>
+  </url><url>
     <loc>https://saraththarayil.github.io/posts/</loc>
     <lastmod>2021-04-09T01:39:36+05:30</lastmod>
   </url><url>
@@ -11,10 +20,10 @@
     <loc>https://saraththarayil.github.io/tags/</loc>
     <lastmod>2021-04-09T01:39:36+05:30</lastmod>
   </url><url>
-    <loc>https://saraththarayil.github.io/posts/testpost/</loc>
+    <loc>https://saraththarayil.github.io/tags/tips/</loc>
     <lastmod>2021-04-09T01:39:36+05:30</lastmod>
   </url><url>
-    <loc>https://saraththarayil.github.io/tags/untagged/</loc>
+    <loc>https://saraththarayil.github.io/posts/usefulcommmands/</loc>
     <lastmod>2021-04-09T01:39:36+05:30</lastmod>
   </url><url>
     <loc>https://saraththarayil.github.io/blog/</loc>
