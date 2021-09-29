@@ -1,82 +1,26 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on Sarath Tharayil</title>
-        <link>https://saraththarayil.github.io/posts/</link>
-        <description>Recent content in Posts on Sarath Tharayil</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 09 Apr 2021 01:39:36 +0530</lastBuildDate>
-        <atom:link href="https://saraththarayil.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Useful Hugo Commands</title>
-            <link>https://saraththarayil.github.io/posts/usefulcommmands/</link>
-            <pubDate>Fri, 09 Apr 2021 01:39:36 +0530</pubDate>
-            
-            <guid>https://saraththarayil.github.io/posts/usefulcommmands/</guid>
-            <description>Hey I&amp;rsquo;ve just created this site and looks what it needs some content! So, I&amp;rsquo;m adding some Hugo setup basics here just to make sure I dont forget about the process and seems like some of you might can take inspirations from it.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Sarath Tharayil</title>
+    <link>https://saraththarayil.com/posts/</link>
+    <description>Recent content in Posts on Sarath Tharayil</description>
+    <image>
+      <url>https://saraththarayil.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://saraththarayil.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 09 Apr 2021 01:39:36 +0530</lastBuildDate><atom:link href="https://saraththarayil.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Useful Hugo Commands</title>
+      <link>https://saraththarayil.com/posts/usefulcommmands/</link>
+      <pubDate>Fri, 09 Apr 2021 01:39:36 +0530</pubDate>
+      
+      <guid>https://saraththarayil.com/posts/usefulcommmands/</guid>
+      <description>Hey I&amp;rsquo;ve just created this site and looks what it needs some content! So, I&amp;rsquo;m adding some Hugo setup basics here just to make sure I dont forget about the process and seems like some of you might can take inspirations from it.
 Basic Installation For the Windows users out there
 (Mac/Linux users chill please, I&amp;rsquo;ll add when I revisit this one)
 choco install hugo -confirmMake sure you have Chocolatey installed.</description>
-            <content type="html"><![CDATA[<h4 id="hey-ive-just-created-this-site-and-looks-what-it-needs-some-content">Hey I&rsquo;ve just created this site and looks what it needs some content!</h4>
-<p>So, I&rsquo;m adding some Hugo setup basics here just to make sure I dont forget about the process and seems like some of you might can take inspirations from it.</p>
-<h3 id="basic-installation">Basic Installation</h3>
-<p>For the Windows users out there<br>
-(Mac/Linux users chill please, I&rsquo;ll add when I revisit this one)</p>
-<pre><code>choco install hugo -confirm
-</code></pre><p>Make sure you have Chocolatey installed. If no, run the below code in Powershell with admin rights</p>
-<pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-</code></pre><p>If you want &ldquo;extended&rdquo; Sass/SCSS version, do</p>
-<pre><code>choco install hugo-extended -confirm
-</code></pre><h4 id="we-need-some-pre-requisites-too">We need some pre-requisites too</h4>
-<ul>
-<li><a href="https://git-scm.com/">Git</a></li>
-<li><a href="https://golang.org/">Go</a> (at least Go 1.11)</li>
-</ul>
-<h3 id="setting-up-new-site">Setting up new site</h3>
-<pre><code>hugo new site &lt;sitename&gt;
-</code></pre><p>To setup a theme, browse some Hugo themes, get one downloaded/cloned in your &lsquo;themes&rsquo; directory. Then do</p>
-<pre><code>hugo -t &lt;theme-name&gt;
-</code></pre><p>Then to view your site live locally, just do</p>
-<pre><code>hugo server
-</code></pre><p>Isn&rsquo;t that cool, you can code the site and the site will be refreshed when you save your code changes!</p>
-<p>Then something I did was adding a submodule to public directory of the site so that the static pages generated will be populated there and I need to have this site only added to the github pages repo to host this site!</p>
-<h3 id="adding-submodule-to-public-directory">Adding submodule to public directory</h3>
-<ul>
-<li>Make sure you have at least one commit on the main branch on the target repository before running this</li>
-</ul>
-<pre><code>git submodule add -b main YOUR_REPO_URL.git public
-</code></pre><h3 id="creating-deployment-script">Creating deployment script</h3>
-<p>So, to deploy the site everytime you make some changes or at any new posts, just run the script. Not tested personally but highly likely it would work :P</p>
-<pre><code>#!/bin/sh
-
-# If a command fails then the deploy stops
-set -e
-
-printf &quot;\033[0;32mDeploying updates to GitHub...\033[0m\n&quot;
-
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-
-# Go To Public folder
-cd public
-
-# Add changes to git.
-git add .
-
-# Commit changes.
-msg=&quot;rebuilding site $(date)&quot;
-if [ -n &quot;$*&quot; ]; then
-	msg=&quot;$*&quot;
-fi
-git commit -m &quot;$msg&quot;
-
-# Push source and build repos.
-git push origin main
-</code></pre><p>That&rsquo;s it. I&rsquo;ll add more if find something basic and usefull!</p>
-]]></content>
-        </item>
-        
-    </channel>
+    </item>
+    
+  </channel>
 </rss>
